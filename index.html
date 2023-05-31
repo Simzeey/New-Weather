@@ -28,14 +28,6 @@
     <div class="weather-app-wrapper">
       <div class="weather-app">
         <div class="overview">
-          <form id="form">
-            <input
-              type="text"
-              id="search"
-              placeholder="Which city do you want us to display for you today?"
-              autocomplete="off"
-            />
-          </form>
           <main id="main"></main>
           <h1 id="city">New York, USA</h1>
           <ul>
@@ -45,17 +37,15 @@
         </div>
         <div class="row">
           <div class="col-6">
-            <div class="clearfix weather-temperature">
-              <img
-                src=" https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
-                alt="Clear"
-                id="icon"
-                class="float-left"
-              />
-              <div class="float-left">
-                <strong id="temperature">10</strong
-                ><span class="units"> °C</span>
-              </div>
+            <div class="d-flex weather-temperature"></div>
+            <img
+              src=" https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
+              alt="Clear"
+              id="icon"
+              class="float-left"
+            />
+            <div>
+              <strong id="temperature"></strong><span class="units"> °C</span>
             </div>
           </div>
           <div class="col-6">
