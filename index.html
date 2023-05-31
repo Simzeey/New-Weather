@@ -10,58 +10,70 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
-     <script
-        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
-        integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
-        crossorigin="anonymous"
-      ></script>
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
-        integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
-        crossorigin="anonymous"
-      ></script>
-      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+      integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+      integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>VanillaWeather</title>
-    </head>
-    <div class="container">
-      <div class="weather-app-wrapper">
-        <div class="weather-app">
-          <div class="overview">
-            <h1 id="city">New York, USA</h1>
-            <ul>
-              <li>Last updated: <span id="date"></span></li>
-              <li id="description">Cloudy</li>
-            </ul>
-          </div>
-          <div class="row">
-            <div class="col-6">
-              <div class="clearfix weather-temperature">
-                <img src=" https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="Clear" id="icon" class="float-left" />
-                <div class="float-left">
-                  <strong id="temperature">10</strong
-                  ><span class="units"> °C</span>
-                </div>
+  </head>
+  <div class="container">
+    <div class="weather-app-wrapper">
+      <div class="weather-app">
+        <div class="overview">
+          <form id="form">
+            <input
+              type="text"
+              id="search"
+              placeholder="Which city do you want us to display for you today?"
+              autocomplete="off"
+            />
+          </form>
+          <main id="main"></main>
+          <h1 id="city">New York, USA</h1>
+          <ul>
+            <li>Last updated: <span id="date"></span></li>
+            <li id="description">Cloudy</li>
+          </ul>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="clearfix weather-temperature">
+              <img
+                src=" https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
+                alt="Clear"
+                id="icon"
+                class="float-left"
+              />
+              <div class="float-left">
+                <strong id="temperature">10</strong
+                ><span class="units"> °C</span>
               </div>
             </div>
-            <div class="col-6">
-              <ul>
-                <li>Precipitation: <span id="precipitation"></span>%</li>
-                <li>Humidity: <span id="humidity"></span>%</li>
-                <li>Wind: <span id="wind"></span> m/h</li>
-              </ul>
-            </div>
+          </div>
+          <div class="col-6">
+            <ul>
+              <li>Precipitation: <span id="precipitation"></span>%</li>
+              <li>Humidity: <span id="humidity"></span>%</li>
+              <li>Wind: <span id="wind"></span> m/h</li>
+            </ul>
           </div>
         </div>
-              <small>
-          <a
-            href="https://github.com/Simzeey/VanillaWeatherApp"
-            target="_blank"
-            >Open-source code</a
-          >
-          by Simphiwe Hlongwana
-        </small>
+      </div>
+      <small>
+        <a href="https://github.com/Simzeey/VanillaWeatherApp" target="_blank"
+          >Open-source code</a
+        >
+        by Simphiwe Hlongwana
+      </small>
       <script src="index.js"></script>
     </div>
-  </body>
+  </div>
 </html>
