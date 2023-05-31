@@ -28,7 +28,16 @@
     <div class="weather-app-wrapper">
       <div class="weather-app">
         <div class="overview">
-          <main id="main"></main>
+          <main id="main">
+            <form id="form">
+              <input
+                type="text"
+                id="search"
+                placeholder="Which city do you want us to display for you today?"
+                autocomplete="off"
+              />
+            </form>
+          </main>
           <h1 id="city">New York, USA</h1>
           <ul>
             <li>Last updated: <span id="date"></span></li>
