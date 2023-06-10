@@ -52,3 +52,6 @@ input:focus {
   position: relative;
   top: -80%;
 }
+h1 {
+  font-family: "Poppins";
+}
