@@ -3,6 +3,7 @@
   box-sizing: border-box;
 }
 body {
+  text-transform: capitalize;
   margin: 0;
   font-family: "Poppins", sans-serif;
   background-color: linear-gradient(300deg, #757b87, #909d9d);
@@ -21,6 +22,26 @@ body {
   border: 1px solid #dadde1;
   border-radius: 5px;
 }
+.temperature {
+  color: rgb(33, 33, 33);
+  font-size: 50px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.c-f {
+  display: block;
+  float: right;
+}
+
+.unit {
+  color: rgb(33, 33, 33);
+  text-decoration: none;
+  position: relative;
+  font-size: 25px;
+  top: -34px;
+}
+
 input {
   text-align: center;
   padding: 1rem;
