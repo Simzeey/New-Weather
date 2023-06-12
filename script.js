@@ -23,11 +23,12 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function search(event) {
+function searchButton(event) {
   event.preventDefault();
-  let cityElement = document.querySelector("#city");
-  let cityInput = document.querySelector("#city-input");
-  cityElement.innerHTML = cityInput.value;
+  let apiKey = "46fac47dd8b8fa26d1b6852218ad3dfe";
+  let city = document.querySelector("#city").value;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(`${url}&appid=${apiKey}`).then(displayWeather);
 }
 
 function convertToFahrenheit(event) {
@@ -42,8 +43,35 @@ function convertToCelsius(event) {
   celsiusTemperature = Math.round(response.data.main.temp);
   temperatureElement.innerHTML = celsiusTemperature;
 }
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#temperature");
 
-// Feature #1
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperature.innerHTML = Math.round(fahrenheiTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperature = document.querySelector("#temperature");
+  temperature.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
+let form = document.querySelector("form");
+form.addEventListener("submit", searchButton);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
@@ -82,13 +110,6 @@ function showWeather(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
-
-  document.querySelector("#min").innerHTML = Math.round(
-    response.data.main.temp_min
-  );
-  document.querySelector("#max").innerHTML = Math.round(
-    response.data.main.temp_max
-  );
   document.querySelector("#humidity").innerHTML = Math.round(
     response.data.main.humidity
   );
@@ -106,10 +127,3 @@ function showWeather(response) {
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
-
-// Feature #3
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", convertToFahrenheit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", convertToCelsius);
