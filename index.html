@@ -27,42 +27,50 @@
   <body>
     <div id="border">
       <div class="container">
-        <form id="form" class="mb-3">
-        <div class="row">
-          <container class="form">
+        <form id="search-form" class="search-form">
+          <div class="row">
             <div class="col-6">
-            <input
+              <input
                 type="text"
                 placeholder="Type a city.."
                 autofocus="on"
                 autocomplete="off"
-                id="input"
+                class="form-control"
+                id="city-input"
                 role="search"
               />
-                <button type="submit"
-                  value="Search"
-                  class="btn btn-primary">GO! </button></container>
-<h1 id="cityInput">Durban</h1>
-                <div class="col-6">
-                  <span id="day"></span> Tuesday <span id="time"> 19:00 </span>
-                  <div id="condition"> Sunny </div>
-                  <div id="temperature"> 30 </div>
-                  <div id="humid"> Humidity </div>
-                  <div id="speed"> Speed </div>
-                </div>
-                <small>
-                  <a
-                    href="https://github.com/Simzeey/VanillaWeatherApp"
-                    target="_blank"
-                    >Open-source code</a
+              <button
+                type="submit"
+                class="btn btn-primary"
+                id="button"
+                value="search"
+              >
+                GO!
+              </button>
+              </form>
+              <h1 id="city">Durban</h1>
+              <div class="col-6">
+                <div id="date"><span id="date" class="date"> </span></div>
+                   <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="" id="icon" />
+                <div id="description"> <span id="description"></span></div>
+                <div id="temperature">30 <span id="temperature"><a href="#" id="celsius-link" class="active">°C</a> |
+                    <a href="#" id="fahrenheit-link">°F</a></span
                   >
-                  by Simphiwe Hlongwana
-                </small>
-                <script src="script.js"></script>
+</span></div>
+                <div id="humid">Humidity: <span id="humid">%</span></div>
+                <div id="speed"> Wind Speed: <span id="speed"> km/h</span></div>
               </div>
+              <small>
+                <a
+                  href="https://github.com/Simzeey/VanillaWeatherApp"
+                  target="_blank"
+                  >Open-source code</a
+                >
+                by Simphiwe Hlongwana
+              </small>
+              <script src="script.js"></script>
             </div>
-          </form>
-        </div>
+          </div>
       </div>
     </div>
   </body>
