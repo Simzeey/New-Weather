@@ -1,78 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-      crossorigin="anonymous"
-    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Are+You+Serious&family=Bilbo+Swash+Caps&family=Cabin+Sketch&family=Cinzel:wght@800&family=Concert+One&family=Dancing+Script&family=Fredericka+the+Great&family=Herr+Von+Muellerhoff&family=Homemade+Apple&family=Libre+Baskerville&family=Londrina+Shadow&family=Londrina+Solid:wght@300&family=Molle&family=Pacifico&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand&family=Recursive:wght@300;400;500;600;700;800;900;1000&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Rubik+Pixels&family=Sedgwick+Ave+Display&family=Shalimar&family=Special+Elite&family=Stalemate&family=Syncopate:wght@700&family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/fe2d60987a.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="style.css" />
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather App</title>
   </head>
   <body>
-    <div id="border">
-      <div class="container">
-        <form id="search-form" class="search-form">
+    <div class="container">
+      <div class="weather-app">
+        <div class="header">
+          <p class="displaying"> Currently displaying the weather for: </p><h1 id="city"></h1></div>
+        <ul>
+          <li id="date" class="date"></li>
+        </ul>
+        <form id="search-form">
           <div class="row">
             <div class="col-6">
               <input
-                type="text"
-                placeholder="Type a city.."
+                type="search"
+                placeholder="Enter a city.."
                 autofocus="on"
                 autocomplete="off"
-                class="form-control"
                 id="city-input"
-                role="search"
+                class="form-control"
               />
-              <button
-                type="submit"
-                class="btn btn-primary"
-                id="button"
-                value="search"
-              >
-                GO!
-              </button>
-              </form>
-              <h1 id="city">Durban</h1>
-              <div class="col-6">
-               <div id="date"><span id="date" class="date"> </span></div>
-                   <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="" id="weather-icon" />
-                <div id="description"> <span id="description"></span></div>
-                <div class="temperature" id="temperature"> <strong>30 </strong></div><span class="c-f" id="temperature">
-                  <a href="#" class="unit" id="celsius-link" class="active">°C</a>
-                    <a href="#" class="unit" id="fahrenheit-link">°F</a></span
-                  >
-</span>
-                <div id="humid">Humidity: <span id="humid">%</span></div>
-                <div id="speed"> Wind Speed: <span id="speed"> km/h</span></div>
-              </div>
-              <small>
-                <a
-                  href="https://github.com/Simzeey/VanillaWeatherApp"
-                  target="_blank"
-                  >Open-source code</a
-                >
-                by Simphiwe Hlongwana
-              </small>
-              <script src="script.js"></script>
+            </div>
+            <div class="col-3">
+              <button type="submit" class="search"> <img src="icons/icons8-search-50.png" class="new-city"></button>
             </div>
           </div>
+        </form>
+            <div class="mid-section">
+              <p class="humidity">
+                <strong> HUMIDITY </strong><br> <img src="icons/icons8-humidity-53.png" class="humidity-icon"> <br>
+                 <strong> <span id="humidity"></span><span class="units">%</span></strong>
+                </p>
+            <div class="mid-section-main">
+            <strong><div id="description" class="description"></div></strong>
+            <img src="" alt="" class="weather-icon-top-center" id="icon" />
+            <h2>
+              <span class="temperature" id="temperature"></span>
+              <span class="units">°C</span></div>
+            </h2>
+                <p class="wind">
+                <strong> W i n d </strong><br> <img src="icons/icons8-wind-64.png" class="wind-icon"> <br>
+                  <strong><span id="wind"></span><span class="units">KM/h</span></strong>
+                </p></div>
+              <div class="weather-forecast" id="forecast"></div></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <small>
+      <a href="https://github.com/Simzeey/VanillaWeatherApp" target="_blank"
+        >Open-source code</a
+      >
+      by Simphiwe Hlongwana
+    </small>
+    <script src="script.js"></script>
   </body>
 </html>
